@@ -12,7 +12,18 @@ public class BeeperBot extends Robot
     }
     
     public void runRace() {
-        
+        while (frontIsClear()) {
+            collectBeepers();
     }
    
+}
+public void collectBeepers() {
+    faceEast();
+   
+}
+public void faceEast() {
+    while (!facingEast()) {
+        turnLeft();
+    }
+}
 }
