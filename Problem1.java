@@ -16,13 +16,40 @@ public class Problem1 extends Robot
             move();
         }
         turnRight();
-        moveNextToWall();
-    }
-    public void moveNextToWall() {
-        turnLeft();
-        if (!frontIsClear()) {
-            
+        for ( int x = 1; x>0; x ++) {
+            if (frontIsClear()) {
+                turnLeft();
+            if (frontIsClear()) {
+                move();
+                move();
+                turnOff();
+            }
+            else {
+                turnRight();
+                move();;
+            }
+            }
+            else {
+            turnLeft();
+            if (!frontIsClear()) {
+                turnRight();
+                turnRight();
+                move();
+            }
+            else {
+                move();
+                move();
+                turnOff();
+            }
+            }
         }
+        
+    }
+    
+    public void turnRight() {
+        turnLeft();
+        turnLeft();
+        turnLeft();
     }
 }
 
